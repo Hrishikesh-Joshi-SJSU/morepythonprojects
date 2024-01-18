@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CS 122</title>
+</head>
+<body>
+    <h1>CS 122 Course Description</h1>
+    <p>Advanced features of the Python programming language with
+        emphasis on programming practice.</p>
+    {% if results %}
+    <h2>Reviews</h2>
+    <table>
+        <tr>
+            <th>Grade</th>
+            <th>Comment</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{result.grade}}</td>
+            <td>{{result.comment}}</td>
+        </tr>
+        {% endfor %}}
+    </table>
+    {% endif %}
+        <p><a href="/home">Home</a></p>
+
+</body>
+</html>

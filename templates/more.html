@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CS 122</title>
+</head>
+<body>
+    <h1>Select by Grade</h1>
+    <form method="POST">
+        Grade received:<br>
+        <input type="text" name="grade" value={{grade}}><br>
+        <input type="submit" value="Submit"><br><br>
+    </form>
+    {% if results %}
+    <table>
+        <tr>
+            <th>Here's what students thought...</th>
+            <th>and here's the grade they received:</th>
+        </tr>
+         {% for result in results %}
+        <tr>
+            <td>{{result.comment}}
+            <td>{{result.grade}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% elif grade %}
+    <p>No student who received a grade of {{grade}} has reviewed the course yet!</p>
+    {%endif%}</p>
+    <p><a href="/home">Home</a></p>
+</body>
+</html>
+
